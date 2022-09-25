@@ -40,7 +40,7 @@ jobs:
         shell: msys2 {0}
         run: |
             export PATH="${{ github.workspace }}/mingw64:${{ github.workspace }}/mingw64/bin:${{ github.workspace }}/cmake-3.24.0-windows-x86_64/bin:${{ github.workspace }}/msys64/usr/bin:/usr/bin" &&
-            cd libass && g++ --version && ./autogen.sh && ./configure mingw64 -static --prefix="$(pwd)/${{ env.installationPath }}" &&
+            cd libass && g++ --version && ./autogen.sh && ./configure --help && ./configure --prefix="$(pwd)/${{ env.installationPath }}" &&
             mingw32-make.exe install_sw
             
       - name: Archive Release
